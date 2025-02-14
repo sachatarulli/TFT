@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Juego {
@@ -25,8 +26,20 @@ public class Juego {
         // Pedimos nombres a los usuarios
         System.out.print("Ingrese el nombre del jugador 1: ");
         String jugador1 = scanner.nextLine();
-        System.out.println("Ingrese el nombre del jugador 2: ");
+        System.out.print("Ingrese el nombre del jugador 2: ");
         String jugador2 = scanner.nextLine();
+
+        // Sorteo, lanzamiento de moneda
+        System.out.println("Sorteo de moneda...");
+        Random rand = new Random();
+        int moneda = rand.nextInt(2);
+        if (moneda == 0) {
+            turnoJugador1 = true;
+            System.out.println("Comienza: " + jugador1);
+        } else {
+            turnoJugador1 = false;
+            System.out.println("Comienza: " + jugador2);
+        }
 
         // Opciones jugadores
         int opcionUsuario1;
@@ -57,14 +70,14 @@ public class Juego {
 
                 // Do-While OpcionJugador2, restriccion de valores válidos y diferente elección al jug1
                 do {
-                    System.out.println(jugador2 + ", elige un jugador ingresando el número correspondiente: ");
+                    System.out.print(jugador2 + ", elige un jugador ingresando el número correspondiente: ");
                     opcionUsuario2 = scanner.nextInt();
                 } while (opcionUsuario1 == opcionUsuario2 || opcionUsuario2 < 1 || opcionUsuario2 > 11);
 
             } else {
                 // Do-While OpcionJugador2, restriccion de valores válidos
                 do {
-                    System.out.println(jugador2 + ", elige un jugador ingresando el número correspondiente: ");
+                    System.out.print(jugador2 + ", elige un jugador ingresando el número correspondiente: ");
                     opcionUsuario2 = scanner.nextInt();
                 } while (opcionUsuario2 < 1 || opcionUsuario2 > 11);
 
@@ -75,8 +88,8 @@ public class Juego {
                 } while (opcionUsuario2 == opcionUsuario1 || opcionUsuario1 < 1 || opcionUsuario1 > 11);
             }
 
-            equipo1.add(jugadoresDelPais.get(opcionUsuario1 - 1));
-            equipo2.add(jugadoresDelPais.get(opcionUsuario2 - 1));
+            equipo1.add(opcionUsuario1 - 1, jugadoresDelPais.get(opcionUsuario1 - 1));
+            equipo2.add(opcionUsuario2 - 1, jugadoresDelPais.get(opcionUsuario2 - 1));
 
             turnoJugador1 = !turnoJugador1;
 

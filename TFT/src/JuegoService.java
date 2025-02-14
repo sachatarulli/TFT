@@ -13,6 +13,7 @@ public class JuegoService {
      */
     Plantilla p = new Plantilla();
 
+
     // Obtener la lista de jugadores
     List<Jugador> listaJugadores = p.getJugadores();
 
@@ -38,10 +39,5 @@ public class JuegoService {
         int index = random.nextInt(paises.size()); // Selecciona un índice aleatorio
         return paises.remove(index); // Remueve y devuelve el país seleccionado
     }
-
-    public List<String> getPaisesRestantes() {
-        return new ArrayList<>(paises); // Retorna una copia de la lista
-    }
-
 
 }
