@@ -8,6 +8,7 @@ public abstract class Jugador {
         this.apellido = apellido;
         this.nacionalidad = nacionalidad;
     }
+
     public String getNombre() {
         return nombre;
     }
@@ -26,10 +27,8 @@ public abstract class Jugador {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-    public int calcularMedia(){
-        int media = 0;
-        return media;
-    }
 
+    // Método abstracto que debe ser implementado por las subclases
+    public abstract int calcularMedia();
 }
 

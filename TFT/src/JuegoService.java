@@ -1,17 +1,22 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class JuegoService {
+    private List<String> paises = new ArrayList<>(List.of(
+            "Argentina", "Brasil", "Alemania", "Italia",
+            "Francia", "Inglaterra", "Uruguay", "Portugal", "España",
+            "Holanda", "Resto del mundo"));
 
     /*
     Como se usa el constructor sin parámetros, automáticamente llama a agregarJugador() y agrega jugadores a la lista.
      */
-    DBJugadores db = new DBJugadores();
+    Plantilla p = new Plantilla();
 
     // Obtener la lista de jugadores
-    List<Jugador> listaJugadores = db.getJugadores();
+    List<Jugador> listaJugadores = p.getJugadores();
 
-    public List<String> obtenerJugadores(String nacionalidad) {
+    public List<String> obtenerJugadoresPorNacionalidad(String nacionalidad) {
         List<String> seleccion = new ArrayList<>();
 
         for (Jugador jugador: listaJugadores) {
@@ -23,4 +28,20 @@ public class JuegoService {
         }
         return seleccion;
     }
+
+    private Random random = new Random();
+
+    public String girarRuleta() {
+        if (paises.isEmpty()) {
+            return "No quedan más países en la ruleta.";
+        }
+        int index = random.nextInt(paises.size()); // Selecciona un índice aleatorio
+        return paises.remove(index); // Remueve y devuelve el país seleccionado
+    }
+
+    public List<String> getPaisesRestantes() {
+        return new ArrayList<>(paises); // Retorna una copia de la lista
+    }
+
+
 }
