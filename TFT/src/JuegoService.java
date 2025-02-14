@@ -13,7 +13,6 @@ public class JuegoService {
      */
     Plantilla p = new Plantilla();
 
-
     // Obtener la lista de jugadores
     List<Jugador> listaJugadores = p.getJugadores();
 
@@ -22,7 +21,7 @@ public class JuegoService {
 
         for (Jugador jugador: listaJugadores) {
             if (jugador.getNacionalidad().equalsIgnoreCase(nacionalidad)) {
-                // fomart para no usar concatenación
+                // format para no usar concatenación
                 String datos = String.format("%s %s (%d)", jugador.getNombre(), jugador.getApellido(), jugador.calcularMedia());
                 seleccion.add(datos);
             }

@@ -36,7 +36,6 @@ public class Delantero extends Jugador {
 
     @Override
     public int calcularMedia() {
-        int media = (int)Math.round((this.definicion+ this.regate + this.velocidad)/3.0);
-        return super.calcularMedia();
+        return  (int)Math.round((this.definicion+ this.regate + this.velocidad)/3.0);
     }
 }

@@ -4,12 +4,9 @@ import java.util.List;
 public class Plantilla {
     private List<Jugador> jugadores;
 
-
-    public Plantilla(List<Jugador> jugadores) {
-        this.jugadores = new ArrayList<>(jugadores);
-    }
-
     public Plantilla() {
+        this.jugadores = new ArrayList<>();
+        agregarJugadores();
     }
 
     public List<Jugador> getJugadores() {
@@ -399,36 +396,36 @@ public class Plantilla {
         this.jugadores.add(arqueroMundo);
 
         // Defensores
-        Jugador defensorMundo1 = new Defensor("Nemanja", "Vidić", "Serbia", 95, 95, 95);
+        Jugador defensorMundo1 = new Defensor("Nemanja", "Vidić", "Resto del mundo", 95, 95, 95);
         this.jugadores.add(defensorMundo1);
 
-        Jugador defensorMundo2 = new Defensor("Gheorghe", "Popescu", "Rumania", 95, 95, 95);
+        Jugador defensorMundo2 = new Defensor("Gheorghe", "Popescu", "Resto del mundo", 95, 95, 95);
         this.jugadores.add(defensorMundo2);
 
-        Jugador defensorMundo3 = new Defensor("Héctor", "Chumpitaz", "Perú", 95, 95, 95);
+        Jugador defensorMundo3 = new Defensor("Héctor", "Chumpitaz", "Resto del mundo", 95, 95, 95);
         this.jugadores.add(defensorMundo3);
 
         // Mediocampistas
-        Jugador mediocampistaMundo1 = new Mediocampista("George", "Best", "Irlanda del Norte", 99, 99, 99);
+        Jugador mediocampistaMundo1 = new Mediocampista("George", "Best", "Resto del mundo", 99, 99, 99);
         this.jugadores.add(mediocampistaMundo1);
 
-        Jugador mediocampistaMundo2 = new Mediocampista("Hidetoshi", "Nakata", "Japón", 95, 95, 95);
+        Jugador mediocampistaMundo2 = new Mediocampista("Hidetoshi", "Nakata", "Resto del mundo", 95, 95, 95);
         this.jugadores.add(mediocampistaMundo2);
 
-        Jugador mediocampistaMundo3 = new Mediocampista("Abedi", "Pelé", "Ghana", 95, 95, 95);
+        Jugador mediocampistaMundo3 = new Mediocampista("Abedi", "Pelé", "Resto del mundo", 95, 95, 95);
         this.jugadores.add(mediocampistaMundo3);
 
-        Jugador mediocampistaMundo4 = new Mediocampista("Pavel", "Nedvěd", "República Checa", 99, 99, 99);
+        Jugador mediocampistaMundo4 = new Mediocampista("Pavel", "Nedvěd", "Resto del mundo", 99, 99, 99);
         this.jugadores.add(mediocampistaMundo4);
 
         // Delanteros
-        Jugador delanteroMundo1 = new Delantero("Zlatan", "Ibrahimović", "Suecia", 99, 99, 99);
+        Jugador delanteroMundo1 = new Delantero("Zlatan", "Ibrahimović", "Resto del mundo", 99, 99, 99);
         this.jugadores.add(delanteroMundo1);
 
-        Jugador delanteroMundo2 = new Delantero("Ferenc", "Puskás", "Hungría", 99, 99, 99);
+        Jugador delanteroMundo2 = new Delantero("Ferenc", "Puskás", "Resto del mundo", 99, 99, 99);
         this.jugadores.add(delanteroMundo2);
 
-        Jugador delanteroMundo3 = new Delantero("Samuel", "Eto'o", "Camerún", 99, 99, 99);
+        Jugador delanteroMundo3 = new Delantero("Samuel", "Eto'o", "Resto del mundo", 99, 99, 99);
         this.jugadores.add(delanteroMundo3);
 
     }
