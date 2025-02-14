@@ -5,18 +5,19 @@ public class Plantilla {
     private List<Jugador> jugadores;
 
 
-    public Plantilla(List<Jugador> jugadores) {
-        this.jugadores = new ArrayList<>(jugadores);
-    }
-
     public Plantilla() {
+
+        this.jugadores = new ArrayList<>();
+        agregarJugadores();
     }
 
     public List<Jugador> getJugadores() {
+
         return jugadores;
     }
 
     public void setJugadores(List<Jugador> jugadores) {
+
         this.jugadores = jugadores;
     }
 
