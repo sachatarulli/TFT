@@ -77,7 +77,7 @@ public class Juego {
                         } while (!equipo1.get(posicion - 1).equals("0"));
                         scanner.nextLine(); // salto de linea
                         equipo1.set(posicion - 1, obtenerJugador());
-                        System.out.println(equipo1);
+                        mostrarEquipo(equipo1);
                         continue;
                     }
 
@@ -85,7 +85,7 @@ public class Juego {
                         System.out.println("Opción no válida.");
                     } else if (equipo1.get(opcionUsuario1 - 1).equals("0")) {
                         equipo1.set(opcionUsuario1 - 1, jugadoresDelPais.get(opcionUsuario1 - 1));
-                        System.out.println(equipo1);
+                        mostrarEquipo(equipo1);
                     } else {
                         System.out.println("Posición ya elegida. Ingrese otra.");
                         opcionUsuario1 = 0;
@@ -104,7 +104,7 @@ public class Juego {
                         } while (!equipo2.get(posicion - 1).equals("0"));
                         scanner.nextLine(); // salto de linea
                         equipo2.set(posicion - 1, obtenerJugador());
-                        System.out.println(equipo2);
+                        mostrarEquipo(equipo2);
                         continue;
                     }
 
@@ -115,7 +115,7 @@ public class Juego {
                     } else {
                         if (equipo2.get(opcionUsuario2 - 1).equals("0")) {
                             equipo2.set(opcionUsuario2 - 1, jugadoresDelPais.get(opcionUsuario2 - 1));
-                            System.out.println(equipo2);
+                            mostrarEquipo(equipo2);
                         } else {
                             System.out.println("Posición ya elegida.");
                             opcionUsuario2 = 0;
@@ -135,7 +135,7 @@ public class Juego {
                         } while (!equipo2.get(posicion - 1).equals("0"));
                         scanner.nextLine(); // salto de linea
                         equipo2.set(posicion - 1, obtenerJugador());
-                        System.out.println(equipo2);
+                        mostrarEquipo(equipo2);
                         continue;
                     }
 
@@ -143,7 +143,7 @@ public class Juego {
                         System.out.println("Opción no válida.");
                     } else if (equipo2.get(opcionUsuario2 - 1).equals("0")) {
                         equipo2.set(opcionUsuario2 - 1, jugadoresDelPais.get(opcionUsuario2 - 1));
-                        System.out.println(equipo2);
+                        mostrarEquipo(equipo2);
                     } else {
                         System.out.println("Posición ya elegida. Ingrese otra.");
                         opcionUsuario2 = 0;
@@ -162,7 +162,7 @@ public class Juego {
                         } while (!equipo1.get(posicion - 1).equals("0"));
                         scanner.nextLine(); // salto de linea
                         equipo1.set(posicion - 1, obtenerJugador());
-                        System.out.println(equipo1);
+                        mostrarEquipo(equipo1);
                         continue;
                     }
 
@@ -173,7 +173,7 @@ public class Juego {
                     } else {
                         if (equipo1.get(opcionUsuario1 - 1).equals("0")) {
                             equipo1.set(opcionUsuario1 - 1, jugadoresDelPais.get(opcionUsuario1 - 1));
-                            System.out.println(equipo1);
+                            mostrarEquipo(equipo1);
                         } else {
                             System.out.println("Posición ya elegida.");
                             opcionUsuario1 = 0;
@@ -185,6 +185,19 @@ public class Juego {
             turnoJugador1 = !turnoJugador1;
             System.out.println("-------------------------------------------------------------------------");
         }
+    }
+
+    public void mostrarEquipo(List<String> equipo) {
+        System.out.print("[");
+        for (int i = 0; i < equipo.size(); i++) {
+            if (equipo.get(i).equals("0")) {
+                System.out.print("- {" + (i + 1) + "} -");
+            }else {
+                System.out.print("- " + equipo.get(i) + " -");
+            }
+        }
+        System.out.println("]");
+        System.out.println();
     }
 
     public void votacion() {
@@ -259,5 +272,6 @@ public class Juego {
         String datos = String.format("%s %s (%d)", nombre, apellido, media);
         return datos;
     }
+
 
 }
