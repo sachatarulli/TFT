@@ -11,7 +11,7 @@ public class JuegoService {
     /*
     Como se usa el constructor sin parámetros, automáticamente llama a agregarJugador() y agrega jugadores a la lista.
      */
-    Plantilla p = new Plantilla();
+   Plantilla p = new Plantilla();
 
     // Obtener la lista de jugadores
     List<Jugador> listaJugadores = p.getJugadores();
