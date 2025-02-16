@@ -25,165 +25,99 @@ public class Juego {
     }
 
     public void jugar() {
-        // Pedimos nombres a los usuarios
-        System.out.print("Ingrese el nombre del jugador 1: ");
-        jugador1 = scanner.nextLine();
-        System.out.print("Ingrese el nombre del jugador 2: ");
-        jugador2 = scanner.nextLine();
+        pedirNombres();
+        sortearTurno();
+        JuegoService juegoService = new JuegoService();
 
-        // Sorteo, lanzamiento de moneda
-        System.out.println("Sorteo de moneda...");
-        Random rand = new Random();
-        int moneda = rand.nextInt(2);
-        if (moneda == 0) {
-            turnoJugador1 = true;
-            System.out.println("Comienza: " + jugador1);
-        } else {
-            turnoJugador1 = false;
-            System.out.println("Comienza: " + jugador2);
-        }
+        for (int i = 0; i < 11; i++) {
+            String paisSorteado = juegoService.girarRuleta();
+            List<String> jugadoresDelPais = juegoService.obtenerJugadoresPorNacionalidad(paisSorteado);
 
-        // Opciones jugadores
-        int opcionUsuario1;
-        int opcionUsuario2;
-
-        JuegoService juego = new JuegoService();
-        for (int i = 0; i < 11; i++) {// Simulamos 11 giros de ruleta
-
-            String paisSorteado = juego.girarRuleta();  // Pais sorteado
             System.out.println("País seleccionado: " + paisSorteado);
+            mostrarJugadores(jugadoresDelPais);
 
-            // Obtenemos jugadores por nacionalidad y lo agregamos a una lista
-            List<String> jugadoresDelPais = juego.obtenerJugadoresPorNacionalidad(paisSorteado);
-            System.out.println("--------- Lista de jugadores --------- ");
-
-            for (int j = 0; j < jugadoresDelPais.size(); j++) {
-                System.out.println(j+1 + ". " + jugadoresDelPais.get(j));
-            }
-            System.out.println("12. Selección de un jugador particular");
-            System.out.println("--------------------------------------");
-
-            // Determinar qué jugador elige
             if (turnoJugador1) {
-                do {
-                    System.out.print(jugador1 + ", elige un jugador ingresando el número correspondiente: ");
-                    opcionUsuario1 = scanner.nextInt();
-
-                    if (opcionUsuario1 == 12) {
-                        int posicion;
-                        do {
-                            System.out.print("Ingrese la posición: ");
-                            posicion = scanner.nextInt();
-                        } while (!equipo1.get(posicion - 1).equals("0"));
-                        scanner.nextLine(); // salto de linea
-                        equipo1.set(posicion - 1, obtenerJugador());
-                        mostrarEquipo(equipo1);
-                        continue;
-                    }
-
-                    if (opcionUsuario1 < 1 || opcionUsuario1 > 11) {
-                        System.out.println("Opción no válida.");
-                    } else if (equipo1.get(opcionUsuario1 - 1).equals("0")) {
-                        equipo1.set(opcionUsuario1 - 1, jugadoresDelPais.get(opcionUsuario1 - 1));
-                        mostrarEquipo(equipo1);
-                    } else {
-                        System.out.println("Posición ya elegida. Ingrese otra.");
-                        opcionUsuario1 = 0;
-                    }
-                } while (opcionUsuario1 < 1 || opcionUsuario1 > 12);
-
-                do {
-                    System.out.print(jugador2 + ", elige un jugador ingresando el número correspondiente: ");
-                    opcionUsuario2 = scanner.nextInt();
-
-                    if (opcionUsuario2 == 12) {
-                        int posicion;
-                        do {
-                            System.out.print("Ingrese la posición: ");
-                            posicion = scanner.nextInt();
-                        } while (!equipo2.get(posicion - 1).equals("0"));
-                        scanner.nextLine(); // salto de linea
-                        equipo2.set(posicion - 1, obtenerJugador());
-                        mostrarEquipo(equipo2);
-                        continue;
-                    }
-
-                    if (opcionUsuario2 < 1 || opcionUsuario2 > 11) {
-                        System.out.println("Opcion no válida.");
-                    } else if (opcionUsuario1 == opcionUsuario2) {
-                        System.out.println("Jugador ya elegido por " + jugador1);
-                    } else {
-                        if (equipo2.get(opcionUsuario2 - 1).equals("0")) {
-                            equipo2.set(opcionUsuario2 - 1, jugadoresDelPais.get(opcionUsuario2 - 1));
-                            mostrarEquipo(equipo2);
-                        } else {
-                            System.out.println("Posición ya elegida.");
-                            opcionUsuario2 = 0;
-                        }
-                    }
-                } while (opcionUsuario1 == opcionUsuario2 || opcionUsuario2 < 1 || opcionUsuario2 > 12);
+                seleccionarJugador(jugador1, equipo1, equipo2, jugadoresDelPais);
+                seleccionarJugador(jugador2, equipo2, equipo1, jugadoresDelPais);
             } else {
-                do {
-                    System.out.print(jugador2 + ", elige un jugador ingresando el número correspondiente: ");
-                    opcionUsuario2 = scanner.nextInt();
-
-                    if (opcionUsuario2 == 12) {
-                        int posicion;
-                        do {
-                            System.out.print("Ingrese la posición: ");
-                            posicion = scanner.nextInt();
-                        } while (!equipo2.get(posicion - 1).equals("0"));
-                        scanner.nextLine(); // salto de linea
-                        equipo2.set(posicion - 1, obtenerJugador());
-                        mostrarEquipo(equipo2);
-                        continue;
-                    }
-
-                    if (opcionUsuario2 < 1 || opcionUsuario2 > 11) {
-                        System.out.println("Opción no válida.");
-                    } else if (equipo2.get(opcionUsuario2 - 1).equals("0")) {
-                        equipo2.set(opcionUsuario2 - 1, jugadoresDelPais.get(opcionUsuario2 - 1));
-                        mostrarEquipo(equipo2);
-                    } else {
-                        System.out.println("Posición ya elegida. Ingrese otra.");
-                        opcionUsuario2 = 0;
-                    }
-                } while (opcionUsuario2 < 1 || opcionUsuario2 > 12);
-
-                do {
-                    System.out.print(jugador1 + ", elige un jugador ingresando el número correspondiente: ");
-                    opcionUsuario1 = scanner.nextInt();
-
-                    if (opcionUsuario1 == 12) {
-                        int posicion;
-                        do {
-                            System.out.print("Ingrese la posición: ");
-                            posicion = scanner.nextInt();
-                        } while (!equipo1.get(posicion - 1).equals("0"));
-                        scanner.nextLine(); // salto de linea
-                        equipo1.set(posicion - 1, obtenerJugador());
-                        mostrarEquipo(equipo1);
-                        continue;
-                    }
-
-                    if (opcionUsuario1 < 1 || opcionUsuario1 > 11) {
-                        System.out.println("Opcion no válida.");
-                    } else if (opcionUsuario1 == opcionUsuario2) {
-                        System.out.println("Jugador ya elegido por " + jugador2);
-                    } else {
-                        if (equipo1.get(opcionUsuario1 - 1).equals("0")) {
-                            equipo1.set(opcionUsuario1 - 1, jugadoresDelPais.get(opcionUsuario1 - 1));
-                            mostrarEquipo(equipo1);
-                        } else {
-                            System.out.println("Posición ya elegida.");
-                            opcionUsuario1 = 0;
-                        }
-                    }
-                } while (opcionUsuario2 == opcionUsuario1 || opcionUsuario1 < 1 || opcionUsuario1 > 12);
+                seleccionarJugador(jugador2, equipo2, equipo1, jugadoresDelPais);
+                seleccionarJugador(jugador1, equipo1, equipo2, jugadoresDelPais);
             }
 
             turnoJugador1 = !turnoJugador1;
             System.out.println("-------------------------------------------------------------------------");
+        }
+    }
+
+    private void pedirNombres() {
+        System.out.print("Ingrese el nombre del jugador 1: ");
+        jugador1 = scanner.nextLine();
+        System.out.print("Ingrese el nombre del jugador 2: ");
+        jugador2 = scanner.nextLine();
+    }
+
+    private void sortearTurno() {
+        Random random = new Random();
+        int sorteo = random.nextInt(2);
+        if (sorteo == 0) {
+            turnoJugador1 = true;
+        } else {
+            turnoJugador1 = false;
+        }
+    }
+
+    private void mostrarJugadores(List<String> jugadores) {
+        System.out.println("⚽⚽     Lista de jugadores    ⚽⚽");
+        for (int i = 0; i < jugadores.size(); i++) {
+            System.out.println((i + 1) + ". " + jugadores.get(i));
+        }
+        System.out.println("12. Selección de un jugador particular");
+        System.out.println("--------------------------------------");
+    }
+
+    private void seleccionarJugador(String jugador, List<String> equipoPropio, List<String> equipoRival, List<String> jugadoresDelPais) {
+        int opcion;
+        boolean entradaValida;
+
+        do {
+            opcion = validarEntrada(jugador + ", elegí un jugador ingresando el número correspondiente: ", 1, 12);
+            entradaValida = true;
+
+            if (opcion == 12) {
+                int posicion;
+                do {
+                    posicion = validarEntrada("Ingrese la posición: ", 1, 11);
+                } while (!equipoPropio.get(posicion - 1).equals("0"));
+
+                equipoPropio.set(posicion - 1, obtenerJugador());
+            } else if (!equipoPropio.get(opcion - 1).equals("0")) {
+                System.out.println("❌ Posición ya elegida. Ingrese otra.");
+                entradaValida = false;
+            } else if (equipoRival.contains(jugadoresDelPais.get(opcion - 1))) {
+                System.out.println("❌ Jugador ya elegido por el otro jugador.");
+                entradaValida = false;
+            } else {
+                equipoPropio.set(opcion - 1, jugadoresDelPais.get(opcion - 1));
+            }
+
+        } while (!entradaValida);
+
+        mostrarEquipo(equipoPropio);
+    }
+
+    private int validarEntrada(String mensaje, int min, int max) {
+        int entrada;
+        while (true) {
+            System.out.print(mensaje);
+            try {
+                entrada = Integer.parseInt(scanner.nextLine().trim());
+                if (entrada >= min && entrada <= max) {
+                    return entrada;
+                }
+                System.out.println("❌ Opción fuera de rango. Intente nuevamente.");
+            } catch (NumberFormatException e) {
+                System.out.println("❌ Entrada no válida. Ingrese un número entre " + min + " y " + max + ".");
+            }
         }
     }
 
@@ -200,17 +134,42 @@ public class Juego {
         System.out.println();
     }
 
+    public void mostrarEquiposFinales() {
+        System.out.println("⚽⚽                        Equipo de " + jugador1 + "                        ⚽⚽");
+        System.out.println("-------------------------------------------------------------------------------------");
+        System.out.println("                           " + equipo1.get(0));
+        System.out.println();
+        System.out.println("        " + equipo1.get(1) + "   " + equipo1.get(2) + "   " + equipo1.get(3));
+        System.out.println();
+        System.out.println(" " + equipo1.get(4) + "   " + equipo1.get(5) + "   " + equipo1.get(6) + "   " + equipo1.get(7));
+        System.out.println();
+        System.out.println("        " + equipo1.get(8) + "   " + equipo1.get(9) + "   " + equipo1.get(10));
+        System.out.println();
+        System.out.println("⚽⚽                        Equipo de " + jugador2 + "                        ⚽⚽");
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.println("                           " + equipo2.get(0));
+        System.out.println();
+        System.out.println("        " + equipo2.get(1) + "   " + equipo2.get(2) + "   " + equipo2.get(3));
+        System.out.println();
+        System.out.println(" " + equipo2.get(4) + "   " + equipo2.get(5) + "   " + equipo2.get(6) + "   " + equipo2.get(7));
+        System.out.println();
+        System.out.println("        " + equipo2.get(8) + "   " + equipo2.get(9) + "   " + equipo2.get(10));
+
+    }
+
     public void votacion() {
         int sumaEquipo1 = 0;
         int sumaEquipo2 = 0;
         int opcionJug1;
         int opcionJug2;
 
-        System.out.println("\n------- Inicio de votación -------");
+        System.out.println("\n--------------------------------- Inicio de votación --------------------------------");
         for (int i = 0; i < equipo1.size(); i++) {
-            System.out.println("1." + equipo1.get(i) + " vs " + "2." + equipo2.get(i));
-            opcionJug1 = obtenerOpcionValida(jugador1);
-            opcionJug2 = obtenerOpcionValida(jugador2);
+            System.out.println("1. " + equipo1.get(i) + " vs " + "2. " + equipo2.get(i));
+
+            // Se usa validarEntrada en vez de scanner.nextInt()
+            opcionJug1 = validarEntrada(jugador1 + ", elegí el mejor jugador (1 o 2): ", 1, 2);
+            opcionJug2 = validarEntrada(jugador2 + ", elegí el mejor jugador (1 o 2): ", 1, 2);
 
             if (opcionJug1 == opcionJug2) {
                 if (opcionJug1 == 1) {
@@ -232,33 +191,19 @@ public class Juego {
                     sumaEquipo2++;
                 }
             }
+            System.out.println();
         }
+
         System.out.println("--------- Puntos obtenidos ---------");
         System.out.println(jugador1 + ": " + sumaEquipo1 + "pts");
         System.out.println(jugador2 + ": " + sumaEquipo2 + "pts");
+
         if (sumaEquipo1 == sumaEquipo2) {
             System.out.println("Empate");
         } else if (sumaEquipo1 > sumaEquipo2) {
             System.out.println("Ganó " + jugador1);
         } else {
             System.out.println("Ganó " + jugador2);
-        }
-    }
-
-    private int obtenerOpcionValida(String jugador) {
-        while (true) {
-            try {
-                System.out.print(jugador + ", elige qué jugador es mejor (1 o 2): ");
-                int opcion = Integer.parseInt(scanner.nextLine().trim());
-
-                if (opcion == 1 || opcion == 2) {
-                    return opcion;
-                } else {
-                    System.out.println("Entrada inválida. Debes ingresar 1 o 2.");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Entrada inválida. Debes ingresar un número.");
-            }
         }
     }
 
@@ -272,6 +217,5 @@ public class Juego {
         String datos = String.format("%s %s (%d)", nombre, apellido, media);
         return datos;
     }
-
 
 }
