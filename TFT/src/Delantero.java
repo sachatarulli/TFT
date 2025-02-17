@@ -1,3 +1,6 @@
+/*
+clase Delantero que hereda atributos de Superclase "Jugador"
+ */
 public class Delantero extends Jugador {
     private int definicion;
     private int regate;

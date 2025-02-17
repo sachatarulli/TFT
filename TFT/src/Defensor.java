@@ -1,3 +1,6 @@
+/*
+clase Defensor que hereda atributos de Superclase "Jugador"
+ */
 public class Defensor extends Jugador{
     private int marca;
     private int barrida;

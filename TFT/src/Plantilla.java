@@ -19,7 +19,11 @@ public class Plantilla {
     public void setJugadores(List<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
-
+/*
+se importan los datos de los jugadores desde archivo.csv, guardamos cada campo en una
+String[] separandolos por la coma, luego ponemos cada campo en una variable para
+luego, cuando verificamos la posicion, creamos el objeto jugador con todas las variables.
+ */
     public void cargarDesdeCSV(String archivo) {
         String linea;
         try (BufferedReader lector = new BufferedReader(new FileReader(archivo))) {
@@ -52,6 +56,10 @@ public class Plantilla {
 
                 jugadores.add(jugador);
             }
+            /*
+            no hace falta cerrar el archivo con finally porque utilizamos un "try-with-resources"
+            es decir que el archivo se cierra solo cuando termina el try
+             */
         } catch (IOException e) {
             System.out.println("Error al leer el archivo CSV: " + e.getMessage());
         }

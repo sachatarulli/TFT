@@ -1,3 +1,6 @@
+/*
+clase Mediocampista que hereda atributos de Superclase "Jugador"
+ */
 public class Mediocampista extends Jugador{
     private int pase;
     private int resistencia;

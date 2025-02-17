@@ -1,3 +1,7 @@
+/*
+clase Arquero que hereda atributos de Superclase "Jugador"
+ */
+
 public class Arquero extends Jugador{
     private int reflejos;
     private int agilidad;

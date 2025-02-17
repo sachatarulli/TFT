@@ -2,27 +2,27 @@ Arquero,Pato,Fillol,Argentina,97,96,95
 Defensor,Ratón,Ayala,Argentina,89,90,91
 Defensor,Cristian,Romero,Argentina,90,91,92
 Defensor,Daniel,Passarella,Argentina,96,97,98
-Mediocampista,Fernando,Redondo,Argentina,97,96,95
 Mediocampista,Diego,Maradona,Argentina,99,99,99
-Mediocampista,Juan Román,Riquelme,Argentina,94,95,96
+Mediocampista,Fernando,Redondo,Argentina,97,96,95
 Mediocampista,Sebastian,Veron,Argentina,93,92,91
-Delantero,Gabriel,Batistuta,Argentina,94,95,96
+Mediocampista,Juan Román,Riquelme,Argentina,94,95,96
 Delantero,Lionel,Messi,Argentina,99,99,99
+Delantero,Gabriel,Batistuta,Argentina,94,95,96
 Delantero,Mario,Kempes,Argentina,94,95,96
 Arquero,Nelson,Dida,Brasil,89,90,91
 Defensor,Cafu,Marcos,Brasil,96,97,98
-Defensor,Roberto,Carlos,Brasil,96,97,98
 Defensor,Lucio,Ferreira,Brasil,90,91,92
+Defensor,Roberto,Carlos,Brasil,96,97,98
+Mediocampista,Kaká,Ricardo,Brasil,97,96,95
 Mediocampista,Dunga,Carlos,Brasil,89,90,91
 Mediocampista,Zico,Arthur,Brasil,97,96,95
 Mediocampista,Ronaldinho,Gaucho,Brasil,96,97,98
-Mediocampista,Kaká,Ricardo,Brasil,97,96,95
 Delantero,Pelé,Edson,Brasil,99,99,99
 Delantero,Ronaldo,Nazário,Brasil,99,98,97
 Delantero,Romário,de Souza,Brasil,96,97,98
 Arquero,Manuel,Neuer,Alemania,96,97,98
-Defensor,Franz,Beckenbauer,Alemania,99,98,97
 Defensor,Philipp,Lahm,Alemania,89,90,91
+Defensor,Franz,Beckenbauer,Alemania,99,98,97
 Defensor,Berti,Vogts,Alemania,89,90,91
 Mediocampista,Lothar,Matthäus,Alemania,96,97,98
 Mediocampista,Michael,Ballack,Alemania,89,90,91
@@ -32,24 +32,24 @@ Delantero,Gerd,Müller,Alemania,96,97,98
 Delantero,Miroslav,Klose,Alemania,90,91,92
 Delantero,Rudi,Völler,Alemania,89,90,91
 Arquero,Gianluigi,Buffon,Italia,96,97,98
-Defensor,Paolo,Maldini,Italia,96,97,98
 Defensor,Franco,Baresi,Italia,96,97,98
 Defensor,Fabio,Cannavaro,Italia,96,97,98
+Defensor,Paolo,Maldini,Italia,96,97,98
+Mediocampista,Gennaro,Gattuso,Italia,89,90,91
 Mediocampista,Andrea,Pirlo,Italia,97,96,95
 Mediocampista,Daniele,De Rossi,Italia,90,91,92
-Mediocampista,Gennaro,Gattuso,Italia,89,90,91
 Mediocampista,Roberto,Baggio,Italia,96,97,98
 Delantero,Alessandro,Del Piero,Italia,97,96,95
-Delantero,Francesco,Totti,Italia,93,92,91
 Delantero,Filippo,Inzaghi,Italia,89,90,91
+Delantero,Francesco,Totti,Italia,93,92,91
 Arquero,Fabien,Barthez,Francia,89,90,91
 Defensor,Laurent,Blanc,Francia,89,90,91
 Defensor,Lilian,Thuram,Francia,97,96,95
 Defensor,Marcel,Desailly,Francia,90,91,92
-Mediocampista,Patrick,Vieira,Francia,96,97,98
 Mediocampista,Michel,Platini,Francia,96,97,98
-Mediocampista,Zinedine,Zidane,Francia,96,97,98
+Mediocampista,Patrick,Vieira,Francia,96,97,98
 Mediocampista,Didier,Deschamps,Francia,89,90,91
+Mediocampista,Zinedine,Zidane,Francia,96,97,98
 Delantero,Thierry,Henry,Francia,97,96,95
 Delantero,Just,Fontaine,Francia,89,90,91
 Delantero,Kylian,Mbappé,Francia,97,96,95
@@ -57,10 +57,10 @@ Arquero,Gordon,Banks,Inglaterra,89,90,91
 Defensor,Bobby,Moore,Inglaterra,96,97,98
 Defensor,John,Terry,Inglaterra,89,90,91
 Defensor,Rio,Ferdinand,Inglaterra,93,92,91
+Mediocampista,Paul,Scholes,Inglaterra,89,90,91
 Mediocampista,Frank,Lampard,Inglaterra,94,95,96
 Mediocampista,Steven,Gerrard,Inglaterra,97,96,95
 Mediocampista,David,Beckham,Inglaterra,94,95,96
-Mediocampista,Paul,Scholes,Inglaterra,89,90,91
 Delantero,Wayne,Rooney,Inglaterra,93,92,91
 Delantero,Bobby,Charlton,Inglaterra,96,97,98
 Delantero,Harry,Kane,Inglaterra,93,92,91
@@ -68,13 +68,13 @@ Arquero,Fernando,Muslera,Uruguay,89,90,91
 Defensor,José,Nasazzi,Uruguay,93,92,91
 Defensor,Diego,Lugano,Uruguay,89,90,91
 Defensor,Diego,Godin,Uruguay,93,92,91
-Mediocampista,Obdulio,Varela,Uruguay,90,91,92
 Mediocampista,Diego,Forlán,Uruguay,94,95,96
-Mediocampista,Juan,Schiaffino,Uruguay,93,92,91
+Mediocampista,Obdulio,Varela,Uruguay,90,91,92
 Mediocampista,Egidio,Arévalo Ríos,Uruguay,89,90,91
+Mediocampista,Juan,Schiaffino,Uruguay,93,92,91
+Delantero,Enzo,Francescoli,Uruguay,97,96,95
 Delantero,Luis,Suárez,Uruguay,97,96,95
 Delantero,Edinson,Cavani,Uruguay,90,91,92
-Delantero,Enzo,Francescoli,Uruguay,97,96,95
 Arquero,Rui,Patricio,Portugal,89,90,91
 Defensor,Ricardo,Carvalho,Portugal,89,90,91
 Defensor,Pepe,Ferreira,Portugal,93,92,91
@@ -83,27 +83,27 @@ Mediocampista,Deco,De Souza,Portugal,93,92,91
 Mediocampista,Rui,Costa,Portugal,89,90,91
 Mediocampista,Bruno,Fernandes,Portugal,90,91,92
 Mediocampista,João,Moutinho,Portugal,89,90,91
-Delantero,Cristiano,Ronaldo,Portugal,99,98,97
-Delantero,Eusébio,Da Silva,Portugal,96,97,98
 Delantero,Luís,Figo,Portugal,97,96,95
+Delantero,Eusébio,Da Silva,Portugal,96,97,98
+Delantero,Cristiano,Ronaldo,Portugal,99,98,97
 Arquero,Iker,Casillas,España,96,97,98
-Defensor,Carles,Puyol,España,96,97,98
 Defensor,Sergio,Ramos,España,97,96,95
+Defensor,Carles,Puyol,España,96,97,98
 Defensor,Gerard,Pique,España,93,92,91
-Mediocampista,Sergio,Busquets,España,94,95,96
 Mediocampista,Andrés,Iniesta,España,96,97,98
+Mediocampista,Sergio,Busquets,España,94,95,96
 Mediocampista,Xavi,Hernández,España,96,97,98
 Mediocampista,David,Silva,España,89,90,91
-Delantero,Raúl,González,España,97,96,95
 Delantero,David,Villa,España,90,91,92
+Delantero,Raúl,González,España,97,96,95
 Delantero,Fernando,Torres,España,89,90,91
 Arquero,Edwin,van der Sar,Holanda,89,90,91
 Defensor,Ronald,Koeman,Holanda,96,97,98
 Defensor,Virgil,Van Djik,Holanda,97,96,95
 Defensor,Frank,de Boer,Holanda,94,95,96
-Mediocampista,Johan,Cruyff,Holanda,99,98,97
-Mediocampista,Ruud,Gullit,Holanda,96,97,98
 Mediocampista,Frank,Rijkaard,Holanda,97,96,95
+Mediocampista,Ruud,Gullit,Holanda,96,97,98
+Mediocampista,Johan,Cruyff,Holanda,99,98,97
 Mediocampista,Clarence,Seedorf,Holanda,94,95,96
 Delantero,Marco,van Basten,Holanda,96,97,98
 Delantero,Dennis,Bergkamp,Holanda,97,96,95
@@ -116,6 +116,6 @@ Mediocampista,George,Best,Resto del mundo,93,92,91
 Mediocampista,Yaya,Toure,Resto del mundo,90,91,92
 Mediocampista,Luka,Modric,Resto del mundo,97,96,95
 Mediocampista,Pavel,Nedvěd,Resto del mundo,96,97,98
+Delantero,Samuel,Eto'o,Resto del mundo,94,95,96
 Delantero,Zlatan,Ibrahimović,Resto del mundo,94,95,96
 Delantero,Ferenc,Puskás,Resto del mundo,96,97,98
-Delantero,Samuel,Eto'o,Resto del mundo,94,95,96

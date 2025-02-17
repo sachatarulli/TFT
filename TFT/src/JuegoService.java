@@ -13,15 +13,21 @@ public class JuegoService {
      */
    Plantilla p = new Plantilla();
 
-    // Obtener la lista de jugadores
+    /*
+    Obtener la lista de jugadores
+     */
     List<Jugador> listaJugadores = p.getJugadores();
 
+    /*
+recorremos el array de Jugadores, comparamos la nacionalidad de cada uno con el pais sorteado
+en la ruleta, las coincidencias las guardamos en un array, para que los jugadores elijan
+mas adelante
+ */
     public List<String> obtenerJugadoresPorNacionalidad(String nacionalidad) {
         List<String> seleccion = new ArrayList<>();
-
         for (Jugador jugador: listaJugadores) {
             if (jugador.getNacionalidad().equalsIgnoreCase(nacionalidad)) {
-                // format para no usar concatenación
+                /* format para no usar concatenación */
                 String datos = String.format("%s %s (%d)", jugador.getNombre(), jugador.getApellido(), jugador.calcularMedia());
                 seleccion.add(datos);
             }
@@ -35,8 +41,8 @@ public class JuegoService {
         if (paises.isEmpty()) {
             return "No quedan más países en la ruleta.";
         }
-        int index = random.nextInt(paises.size()); // Selecciona un índice aleatorio
-        return paises.remove(index); // Remueve y devuelve el país seleccionado
+        int index = random.nextInt(paises.size()); /* Selecciona un índice aleatorio*/
+        return paises.remove(index); /* Remueve y devuelve el país seleccionado*/
     }
 
 }
